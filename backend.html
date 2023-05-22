@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container pt-5">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form>
+                    <div class="form-group ">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" id="user" data="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Followers</label>
+                        <input type="text" class="form-control" id="followers" data="followers" placeholder="Followers">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Platform</label>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle w-100" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Facebook
+                            </button>
+                            <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Facebook</a>
+                                <a class="dropdown-item" href="#">Instagram</a>
+                                <a class="dropdown-item" href="#">Reddit</a>
+                                <a class="dropdown-item" href="#">Twitter</a>
+                                <a class="dropdown-item" href="#">YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 text-center">
+                        <button type="submit" class="btn btn-primary" onclick="trigger()">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <script>
+                $(".dropdown-item").click(function () {
+                    $("#dropdownMenuButton").html($(this).html());
+                });
+
+                function trigger() {
+                    var existingEntries = JSON.parse(localStorage.getItem("data"));
+                    if (existingEntries == null) existingEntries = [];
+
+                    var plat = document.getElementById("dropdownMenuButton").innerHTML.trim();
+                    var listOfFields = document.getElementsByClassName("form-control");
+
+                    var entry = {
+                        "platform": plat
+                    };
+
+                    for (var i = 0; i < listOfFields.length; i++) {
+                        //entry[listOfFields[i].getAttribute("data")] = listOfFields[i].getAttribute("data")
+                        if (listOfFields[i].value == "") {
+                            alert("Please fill all the fields");
+                            return;
+                        }
+                        if (listOfFields[i].getAttribute("data") == "followers" && isNaN(listOfFields[i].value)) {
+                            alert("Followers field must be numbers");
+                            return;
+                        }
+
+                        entry[listOfFields[i].getAttribute("data")] = listOfFields[i].value;
+
+
+                    }
+
+
+
+
+
+                    // Save allEntries back to local storage
+                    existingEntries.push(entry);
+                    localStorage.setItem("data", JSON.stringify(existingEntries));
+
+
+                }
+            </script>
+        </div>
+    </div>
+
+</body>
+
+</html>

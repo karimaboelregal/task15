@@ -1,0 +1,188 @@
+@font-face {
+    font-family: "helv";
+    src: url(_H_HelveticaNeueInterface_2.ttf);
+}
+@font-face {
+    font-family: "ag";
+    src: url(Agnella\ Bold.ttf);
+}
+
+html {
+    height: 100%;
+}
+
+.ag{
+    font-family: "ag";
+
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background: #1d2029 ;
+    font-family: "helv";
+
+}
+
+
+
+.bg-color {
+    width: 100%;
+    height: 40%;
+    max-height: 400px;
+    background-color: #20222f;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.cus-pad {
+
+    margin-top: -100px
+}
+
+@media (max-width: 768px ) {
+    .cus-pad {
+        margin-top: 0px
+    }
+}
+
+@media (max-height: 600 ) {
+    .cus-pad {
+        margin-top: 0px
+    }
+}
+
+
+
+.custom-card {
+    color: white;
+    padding: 20px 10px;
+    border-radius: 5px;
+}
+
+.custom-card-2 {
+    color: white;
+    padding: 20px 10px;
+    border-radius: 5px;
+}
+
+
+.darkblue {
+    box-shadow: inset 0 1000px #252b43;
+    color: white;
+}
+
+.darkblue:hover {
+    box-shadow: inset 0 1000px #333a56;
+}
+
+
+.white {
+    color: black;
+    background-color: #f0f3fa;
+}
+
+.white:hover {
+    box-shadow: inset 0 1000px #e1e3f0;
+}
+
+.user {
+    font-size: 15px;
+
+}
+
+.followers {
+    display: block;
+    font-size: 40px;
+}
+
+.text-follow {
+    font-size: 15px;
+    color: #666d89;
+    display: block;
+}
+
+
+
+.facebook {
+    border-top: 5px solid #4267B2;
+
+}
+.facebook i {
+    color: #4267B2;
+    font-size: 20px;
+}
+
+
+.custom-control-label::before {
+    background-color: #3baebc;
+    border: none;
+}
+
+.instagram {
+    background-image: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+    /* Fill the inside with white */
+    background-origin: border-box;
+    box-shadow: inset 0 1000px #252b43;
+    /* A transaprent border, so the very edge of the button shows through */
+    border-top: 5px solid transparent;
+}
+
+
+
+.instagram i {
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+    font-size: 20px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.reddit {
+    border-top: 5px solid #FF5700;
+}
+
+.reddit i{
+    color: #FF5700;
+}
+
+.twitter {
+    border-top: 5px solid #1DA1F2;
+}
+
+.twitter i{
+    color: #1DA1F2;
+}
+
+.youtube {
+    border-top: 5px solid #FF0000;
+}
+.youtube i {
+    color: #FF0000;
+}
+
+
+
+
+.instagram i {
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+    font-size: 20px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-added {
+    display: block;
+    color: #449488;
+    font-size: 18px;
+}
+
+.text-added i {
+    color: #449488;
+    font-size: 16px;
+    background: transparent;
+    -webkit-text-fill-color: #449488;
+
+}
